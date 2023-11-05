@@ -21,6 +21,9 @@ $ pip freeze > requirements.txt
 
 # Install from requirements.txt
 $ pip install -r requirements.txt
+
+# Use the correct jupyter version.
+$ pipenv run jupyter-lab
 ```
 
 ## Example
