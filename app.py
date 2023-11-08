@@ -12,15 +12,24 @@ llm = GooglePalm(google_api_key=google_api_key, temperature=0.0)
 # Create our template.
 template = """
 You are an experienced technical writer able to explain complicated systems in simple words.
-Improve the documentation below and return it as markdown:
+Improve the documentation below. Return the result as markdown. Add context and improve description too:
 
+
+Documentation:
+```
 {text}
+```
 """
 
 # Create a LangChain prompt template that we can insert values to later
 prompt = PromptTemplate(input_variables=["text"], template=template)
 
 st.title("Better Documentation")
+
+template = st.text_area(
+    "Prompt", value=template.strip(), height=len(template.strip().split("\n")) * 32 + 32
+)
+
 uploaded_file = st.file_uploader(
     "Choose a file",
     type="md",
