@@ -34,3 +34,8 @@ curl \
 -d '{ "prompt": { "text": "Write a story about a magic backpack"} }' \
 "https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=YOUR_API_KEY"
 ```
+
+
+## API Documentation
+
+https://developers.generativeai.google/api/python/google/generativeai
